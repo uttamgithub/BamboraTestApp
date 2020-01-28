@@ -23,7 +23,12 @@
 
             scope.state.customCheckout = customcheckout();
             
-            var options = {};
+            var options = {
+                classes: {
+                    error: 'bambora-invalid',
+                    complete: 'bambora-valid'
+                }
+            };
 
             var customCheckout = scope.state.customCheckout;
 
@@ -39,14 +44,14 @@
 
             customCheckout.on('brand', function (event) {
                 
-                var cardLogo = 'none';
+                var cardLogo = '';
                 if (event.brand && event.brand !== 'unknown') {
                     var filePath = 'https://cdn.na.bambora.com/downloads/images/cards/' + event.brand + '.svg';
                     cardLogo = 'url(' + filePath + ')';
                 }
                 document.getElementById('card-number').style.backgroundImage = cardLogo;
-                document.getElementById('card-number').style.backgroundRepeat= 'no-repeat';
-                document.getElementById('card-number').style.backgroundPositionX = 'right';
+                //document.getElementById('card-number').style.backgroundRepeat= 'no-repeat';
+                //document.getElementById('card-number').style.backgroundPositionX = 'right';
             });
 
             customCheckout.on('empty', function (event) {
