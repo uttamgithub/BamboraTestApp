@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+    <div ng-app="paymentTestApp">
+        <div ng-controller="paymentController">
+            <button class="btn btn-outline-primary" ng-click="toggleForm()">Toggle</button>
+            
+            <div ng-if="toggle" bambora-payment></div>
+
+        </div>
+    </div>
+
+</div>

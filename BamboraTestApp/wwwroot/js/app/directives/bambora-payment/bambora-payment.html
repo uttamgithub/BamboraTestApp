@@ -1,0 +1,42 @@
+﻿<div>
+
+    <div>
+        <form id="checkout-form">
+            <div class="row">
+                <div class="form-group col-xs-12">
+                    <label for="card-number">Card Number</label>
+                    <div id="card-number" class="form-control"></div>
+                    <div class="text-danger" ng-if="state.cardNumberError" ng-bind="state.cardNumberError"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-xs-12">
+                    <label for="card-cvv">CVV</label>
+                    <div id="card-cvv" class="form-control"></div>
+                    <div class="text-danger" ng-if="state.cvvError" ng-bind="state.cvvError"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-xs-12">
+                    <label for="card-expiry">Expiry:</label>
+                    <div id="card-expiry" class="form-control"></div>
+                    <div class="text-danger" ng-if="state.expiryError" ng-bind="state.expiryError"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <button ng-click="btnTokenize()">Get Token</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div ng-repeat="t in state.tokens" class="row">
+                        <div class="col-xs-2">{{t.index}}</div>
+                        <div class="col-xs-10">{{t.token | json}}</div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
